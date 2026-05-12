@@ -175,9 +175,9 @@ HTML_TEMPLATE = '''
     <div class="sidebar">
         <h2>DarkNet</h2>
         <nav>
-            <a href="/feed">📱 Стена</a>
-            <a href="/chat">💬 Чат (стикеры/кружки)</a>
-            <a href="/gallery">🖼 Галерея</a>
+            <a href="/feed">Стена</a>
+            <a href="/chat">Чат (стикеры/кружки)</a>
+            <a href="/gallery">Галерея</a>
         </nav>
         <div>Привет, {{ username }}<br><a href="/logout">Выйти</a></div>
     </div>
@@ -201,19 +201,19 @@ def chat():
     return render_template_string('''
     {% extends "base.html" %}
     {% block content %}
-    <div class="chat-header">⚡ Общий чат (как Telegram)</div>
+    <div class="chat-header">Общий чат (как Telegram)</div>
     <div id="messages" style="height:400px; overflow-y:scroll; background:#1e1e1e; padding:10px;"></div>
     <div class="message-input">
-        <button id="emojiBtn">😊</button>
-        <button id="stickerBtn">🎨</button>
+        <button id="emojiBtn"></button>
+        <button id="stickerBtn"></button>
         <input type="file" id="fileInput" accept="image/*,video/*,audio/*">
-        <button id="recordVideo">📹 Кружок</button>
+        <button id="recordVideo">Кружок</button>
         <input type="text" id="msgInput" placeholder="Сообщение..." autocomplete="off">
         <button id="sendBtn">➤</button>
     </div>
     <div id="stickerPanel" style="display:none; background:#2c2c2c; padding:10px;">
-        <button class="sticker" data-url="/static/stickers/cat.png">🐱 Стикер1</button>
-        <button class="sticker" data-url="/static/stickers/dog.png">🐶 Стикер2</button>
+        <button class="sticker" data-url="/static/stickers/cat.png">Стикер1</button>
+        <button class="sticker" data-url="/static/stickers/dog.png">Стикер2</button>
         <form method="post" action="/upload_sticker" enctype="multipart/form-data" style="display:inline;">
             <input type="file" name="sticker" accept="image/png">
             <button>Загрузить свой стикер</button>
